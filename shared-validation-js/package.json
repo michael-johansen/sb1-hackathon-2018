@@ -1,0 +1,12 @@
+{
+  "name": "shared-validation-js",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "./gradlew test"
+  },
+  "jest": {
+    "testRegex": "_test\\.js$"
+  }
+}
