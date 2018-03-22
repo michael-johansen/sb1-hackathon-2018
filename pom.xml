@@ -4,7 +4,7 @@
 
     <groupId>shared-validation</groupId>
     <artifactId>shared-validation</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <properties>
         <kotlin.version>1.2.30</kotlin.version>
     </properties>
@@ -68,20 +68,13 @@
             </plugin>
         </plugins>
     </build>
+
     <distributionManagement>
         <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>nexus-releases</id>
-            <name>Nexus SB1 release repo</name>
-            <url>http://nexus.intern.sparebank1.no/nexus/content/repositories/releases/</url>
-            <layout>default</layout>
+            <!-- Id defines username/password combination to use from settings.xml on the server -->
+            <id>nexus.intern</id>
+            <name>Nexus-Intern Release Repository</name>
+            <url>https://nexus.intern.sparebank1.no/repository/releases/</url>
         </repository>
-        <snapshotRepository>
-            <uniqueVersion>true</uniqueVersion>
-            <id>nexus-snapshots</id>
-            <name>Nexus SB1 snapshot repo</name>
-            <url>http://nexus.intern.sparebank1.no/nexus/content/repositories/snapshots/</url>
-            <layout>default</layout>
-        </snapshotRepository>
     </distributionManagement>
 </project>
