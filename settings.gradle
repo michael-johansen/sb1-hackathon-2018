@@ -1,0 +1,3 @@
+rootProject.name = 'shared-validation'
+
+include 'shared-validation-jvm', 'shared-validation-js'
