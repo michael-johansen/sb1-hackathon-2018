@@ -1,7 +1,6 @@
 import org.junit.Test
-import sb1.validation.ssn
-import kotlin.test.assertEquals
-import kotlin.test.assertNotEquals
+import sb1.validation.ssnValidator
+import kotlin.test.assertTrue
 
 class TestSSN {
 
@@ -12,19 +11,19 @@ class TestSSN {
     private val invalidSSN = "02076543933"
 
     @Test fun testTooShort() {
-        assertNotEquals("", ssn(tooShortSSN))
+        assertTrue(ssnValidator(tooShortSSN).isNotEmpty())
     }
 
     @Test fun testTooLong() {
-        assertNotEquals("", ssn(tooLongSSN))
+        assertTrue(ssnValidator(tooLongSSN).isNotEmpty())
     }
 
 
     @Test fun testMod11() {
-        assertEquals("", ssn(validSSN))
+        assertTrue(ssnValidator(validSSN).isEmpty())
     }
 
     @Test fun testMod11invalid() {
-        assertNotEquals("", ssn(invalidSSN))
+        assertTrue(ssnValidator(invalidSSN).isNotEmpty())
     }
 }

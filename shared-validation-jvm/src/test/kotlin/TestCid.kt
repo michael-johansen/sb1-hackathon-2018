@@ -1,6 +1,7 @@
 import org.junit.Test
-import sb1.validation.cid
+import sb1.validation.cidValidator
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class TestCid {
 
@@ -8,11 +9,11 @@ class TestCid {
     private val invalidCID = "12345768903"
 
     @Test fun testMod11() {
-        assertEquals("", cid(validCID))
+        assertTrue(cidValidator(validCID).isEmpty())
     }
 
     @Test fun testMod11invalid() {
-        assertEquals("", cid(invalidCID))
+        assertTrue(cidValidator(invalidCID).isNotEmpty())
     }
 
 }
