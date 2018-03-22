@@ -1,5 +1,7 @@
+version "${version}"
+
 buildscript {
-    ext.kotlin_version = '1.2.10'
+    ext.kotlin_version = '1.2.30'
 
     repositories {
         mavenCentral()
@@ -9,11 +11,12 @@ buildscript {
     }
 }
 
-
 apply plugin: 'kotlin-platform-common'
+apply plugin: 'maven'
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -21,3 +24,15 @@ dependencies {
     testCompile "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
     testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
 }
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "http://nexus.intern.sparebank1.no/nexus/content/repositories/snapshots/") {
+            authentication(
+                    userName: System.properties['mavenUser'],
+                    password:  System.properties['mavenPassword']
+            )
+        }
+    }
+}
+
