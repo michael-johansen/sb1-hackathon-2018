@@ -1,5 +1,3 @@
 package sb1.validation
 
-class Validator {
-    fun test() = "hei"
-}
+fun cid(string: String) = string.length == 11
