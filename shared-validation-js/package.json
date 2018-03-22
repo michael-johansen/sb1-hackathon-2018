@@ -1,6 +1,7 @@
 {
   "name": "shared-validation-js",
   "version": "0.0.1",
+  "main" : "web/shared-validation-js/shared-validation-js.js",
   "dependencies": {
   },
   "scripts": {
