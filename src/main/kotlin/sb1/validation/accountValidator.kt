@@ -1,7 +1,7 @@
 package sb1.validation
 
 internal val accountCannotStartWithZero: Validator<String> = Validator(
-        validator = { account -> account.first() != '0' },
+        validator = { account -> account.firstOrNull() != '0' },
         reason = "Kan ikke starte med 0")
 
 internal val accountLength: Validator<String> = Validator(
